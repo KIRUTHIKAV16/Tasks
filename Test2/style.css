@@ -1,0 +1,29 @@
+#b{
+    background-color: aqua;
+}
+
+#heading{
+    color: blueviolet;
+    font-size: 50px;
+
+}
+#heading2{
+    color: blue;
+    font-style: italic;
+}
+
+#heading3{
+    color: brown;
+    background-color: aliceblue;
+}
+
+#para{
+    color: rgb(2, 50, 50);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#div1{
+    color: rgb(34, 6, 60);
+    font-size: 30px;
+}
