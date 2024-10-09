@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    text-align: center;
+}
+
+.container{
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(218, 201, 167);
+}
+
+form{
+    background-color: rgb(237, 234, 234);
+    border-radius: 5px;
+    padding: 30px;
+    padding-right: 40px;
+    box-shadow: 1px 1px 4px black;
+}
+.labels,.btn{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  
+}
+input{
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 5px;
+    border: none;
+   
+}
+
+.uname:valid,.email:valid,.pass:valid,.age:valid,.code:valid{
+    background-color: rgb(58, 218, 218);
+    color: rgb(23, 23, 78);
+}
+
+.uname:invalid,.email:invalid,.pass:invalid,.age:invalid,.code:invalid{
+    background-color: rgb(213, 196, 230);
+    
+}
+.btn{
+    width: 300px;
+    background-color: rgb(170, 164, 164);
+    padding: 5px;
+    margin-top: 20px;
+}

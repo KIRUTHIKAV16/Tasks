@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="my_form">
+                <h1>Registration Form</h1>
+                <label class="labels" for="uname">Username:</label>
+                <input class="uname" type="text" id="uname" placeholder="Enter the Username" minlength="4" maxlength="10" required>
+                <label class="labels" for="email">Eamil:</label>
+                <input class="email" type="email" id="email" placeholder="Enter the Email id" required>
+                <label class="labels" for="pass">Password:</label>
+                <input class="pass" type="password" id="pass" placeholder="Enter the Password" minlength="8" required>
+                <label class="labels" for="age">Age:</label>
+                <input class="age" type="number" id="age" min="18" max="100" required>
+                <label class="labels" for="zip">Zip Code:</label>
+                <input class="code" type="text" id="zip" pattern="\d{5}" required>
+                <button class="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
