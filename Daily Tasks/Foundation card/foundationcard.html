@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation Background Color Example</title>
+    <!-- Include Foundation CSS from CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
+    <style>
+        .card{
+            width: 500px;
+            
+
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        img{
+            width: 60%;
+            height:50%;
+        }
+    </style>
+ 
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Foundation Card</h1> 
+        <div class="card custom-card callout primary">
+            <div class="card-title">
+                <h3>Primary Card</h3>
+            </div>
+            <div class="card-img">
+                <img src="R.jpg" alt="card image">
+            </div>
+            <div class="card-section">This one is card section</div>
+        </div>  
+        <div class="card custom-card callout secondary">
+            <div class="card-title">
+                <h3>Secondary Card</h3>
+            </div>
+            <div class="card-img">
+                <img src="R.jpg" alt="card image">
+            </div>
+            <div class="card-section">This one is card section</div>
+        </div>
+        <div class="card custom-card callout warning">
+            <div class="card-title">
+                <h3>Warning Card</h3>
+            </div>
+            <div class="card-img">
+                <img src="R.jpg" alt="card image">
+            </div>
+            <div class="card-section">This one is card section</div>
+        </div>
+        <div class="card custom-card callout success">
+            <div class="card-title">
+                <h3>Success Card</h3>
+            </div>
+            <div class="card-img">
+                <img src="R.jpg" alt="card image">
+            </div>
+            <div class="card-section">This one is card section</div>
+        </div>
+    </div>
+
+    <!-- Include Foundation JS and dependencies from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
+    <script>
+        $(document).foundation(); // Initialize Foundation
+    </script>
+</body>
+</html>
