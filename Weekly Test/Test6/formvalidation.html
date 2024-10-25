@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Form with Validation</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/css/foundation.min.css">
+</head>
+<body>
+  <div class="grid-container">
+    <h1>Form validation using foundation</h1>
+    <form >
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+            <label class="block-labels">First Name:</label>
+              <input type="text" placeholder="Enter your first name" required >
+            
+          </div>
+          <div class="medium-6 cell">
+            <label class="block-labels">Last Name:</label>
+              <input  type="text" placeholder="Enter your last name" required >
+          </div>
+          <div class="medium-6 cell">
+              <label class="block-labels">Email:</label>
+              <input  type="email" placeholder="Enter a Email" required>
+          </div>
+          <div class="medium-6 cell">
+              <label class="block-labels">Password:</label>
+              <input  type="password" placeholder="Enter a password" required minlength="8" maxlength="15">
+          </div>
+          <div class="medium-12 cell">
+              <button  type="submit" class="button success expanded">Submit</button>
+          </div>
+        </div>
+
+    </form>
+  </div>
+
+  <!-- Foundation JS (for validation) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>
