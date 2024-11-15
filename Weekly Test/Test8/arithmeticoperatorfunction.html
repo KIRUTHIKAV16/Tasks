@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operators Using Function</title>
+</head>
+<body>
+    <script>
+        function arithmeticOperation(x, y) {
+            return {
+                addition: x + y,
+                substraction: x - y,     
+                multiplication: x * y,        
+                division: x / y,       
+                modulus: x % y
+            };
+        }
+          const x = 20;
+          const y = 10;
+          const result = arithmeticOperation(x, y);
+          console.log(`Sum: ${result.addition}`);
+          console.log(`Difference: ${result.substraction}`);
+          console.log(`Product: ${result.multiplication}`);
+          console.log(`Quotient: ${result.division}`);
+          console.log(`Remainder: ${result.modulus}`);
+
+    </script>
+    
+</body>
+</html>
