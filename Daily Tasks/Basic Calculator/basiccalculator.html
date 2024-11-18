@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: antiquewhite;
+      text-align: center;
+      padding: 20px;
+      height: 100vh;
+    }
+    .container {
+      background: aliceblue;
+      padding: 25px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    .container input, .container button {
+      margin: 20px;
+      padding: 10px;
+      font-size: 20px;
+      border-radius: 5px;
+    }
+    .container button {
+      background-color: blue;
+      color: white;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+  
+</head>
+<body>
+  <h1>Basic Calculator</h1>
+  <div class="container">
+    <input type="number" id="n1" placeholder="Enter First Number">
+    <input type="number" id="n2" placeholder="Enter Second Number">
+    <br>
+    <button onclick="calculate('add')">Add</button>
+    <button onclick="calculate('subtract')">Subtract</button>
+    <button onclick="calculate('multiply')">Multiply</button>
+    <button onclick="calculate('divide')">Divide</button>
+    <div class="result" id="result">Result :</div>
+  </div>
+
+  <script>
+    function calculate(operation) {
+      
+      let n1 = parseFloat(document.getElementById('n1').value);
+      let n2 = parseFloat(document.getElementById('n2').value);
+      let result;
+
+      
+
+      switch (operation) {
+        case 'add':
+          result = n1 + n2;
+          break;
+        case 'subtract':
+          result = n1 - n2;
+          break;
+        case 'multiply':
+          result = n1 * n2;
+          break;
+        case 'divide':
+          if (n2 === 0) {
+            result = "Error: Division by zero is not allowed!";
+          } else {
+            result = n1 / n2;
+          }
+          break;
+        default:
+          result = "Invalid Operation";
+      }
+
+      document.getElementById('result').innerHTML = `Result: ${result}`;
+    }
+  </script>
+</body>
+</html>
