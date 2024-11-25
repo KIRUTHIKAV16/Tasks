@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Website</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- Homepage -->
+  <header class="homepage fade-in" id="home">
+    <div class="container text-center">
+      <h3>Hello, It's Me</h3>
+      <h1>KIRUTHIKA V</h1>
+      <p>A Passionate Fresher Engineering Graduate Aspiring to Excel in Web Development.</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+      </div>
+      <a href="resume.pdf" download class="btn-resume">Download Resume</a>
+    </div>
+  </header>
+  
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg  fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><h1>Kiruthika V Portfolio</h1></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Me -->
+<section id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <div class="row">
+      <div class="col-md-4 zoom-in">
+        <img src="profile.jpeg" alt="My Photo" class="img-fluid rounded-circle" width="50%" height="50%">
+      </div>
+      <div class="col-md-8 slide-up">
+        <p>Hello! My name is <strong>Kiruthika V</strong>, and I am a recent graduate in <strong>Electronics and Communication Engineering (ECE)</strong>.</p>
+        <p>
+          While my academic journey equipped me with strong foundations in electronics and communication systems, my growing passion for <strong>web development</strong> led me to explore modern technologies like HTML, CSS, JavaScript, and Java. I enjoy combining my problem-solving skills with creativity to design responsive and user-friendly web applications.
+        </p>
+        <p>
+          I am eager to leverage my technical skills, adaptability, and enthusiasm for learning to contribute to impactful projects in the tech industry.
+        </p>
+        <h4>Skills</h4>
+        <div class="skills">
+          <!-- HTML -->
+          <div class="skill-item d-flex align-items-center mb-3">
+            <img src="html.png" alt="HTML Logo" class="me-3" width="50" height="50">
+            <div class="w-100">
+              <span>HTML</span>
+              <div class="progress">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+              </div>
+            </div>
+          </div>
+          <!--  CSS -->
+          <div class="skill-item d-flex align-items-center mb-3">
+            <img src="css.png" alt="CSS Logo" class="me-3" width="50" height="50">
+            <div class="w-100">
+              <span>CSS</span>
+              <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+              </div>
+            </div>
+          </div>
+          <!-- JavaScript -->
+          <div class="skill-item d-flex align-items-center mb-3">
+            <img src="js.webp" alt="JavaScript Logo" class="me-3" width="50" height="50">
+            <div class="w-100">
+              <span>JavaScript</span>
+              <div class="progress">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+              </div>
+            </div>
+          </div>
+          <!-- Java -->
+          <div class="skill-item d-flex align-items-center mb-3">
+            <img src="java.png" alt="Java Logo" class="me-3" width="50" height="50">
+            <div class="w-100">
+              <span>Java</span>
+              <div class="progress">
+                <div class="progress-bar bg-danger" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Projects -->
+  <section id="projects" class="projects slide-up">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="row">
+        <div class="col-md-4 fade-in">
+          <div class="project-card">
+            <img src="p1.jpeg" alt="Project 1" class="project-image" 
+            data-description="• Developed an Online Shopping App with HTML for structure and CSS for styling. 
+                              • Integrated sections for New Products, Featured Products, and Cart Details. 
+                              • Created dedicated categories for Men, Women, and Kids collections.">
+            <h3>Online Shopping App WebPage Using HTML and CSS.</h3>
+          </div>
+        </div>
+        <div class="col-md-4 fade-in">
+          <div class="project-card">
+            <img src="p2.jpeg" alt="Project 2" class="project-image" 
+            data-description="• Designed a Simple Online Restaurant App using HTML and CSS. 
+                              • Featured sections for Menu, Special Offers, and Online Order Integration. 
+                              • Focused on user-friendly navigation and responsive design.">
+            <h3>Simple Online Restaurant App WebPage Using HTML and CSS.</h3>
+          </div>
+        </div>
+        <div class="col-md-4 fade-in">
+          <div class="project-card">
+            <img src="p3.jpg" alt="Project 3" class="project-image" 
+            data-description="• Implemented a Neural Network Architecture on FPGA for Image Verification. 
+                              • Utilized HDL for design and verification. 
+                              • Achieved optimized performance for image processing applications.">
+            <h3>FPGA Implementation of Neural Network Architecture for Verify Image.</h3>
+          </div>
+        </div>
+      </div>
+      <!--  Displaying project description -->
+      <div id="project-modal" class="modal">
+        <div class="modal-content">
+          <span id="close-modal" class="close">&times;</span>
+          <p id="modal-description"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <!-- Contact -->
+  <section id="contact" class="contact slide-up">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form id="contactForm">
+        <div class="mb-3 fade-in">
+          <label for="name" class="form-label" >Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter Your Name" required>
+        </div>
+        <div class="mb-3 fade-in">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter Your Email" required>
+        </div>
+        <div class="mb-3 fade-in">
+          <label for="subject" class="form-label">Subject</label>
+          <input type="text" class="form-control" id="subject" placeholder="Email Subject" required>
+        </div>
+        <div class="mb-3 fade-in">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary fade-in">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="btn btn-secondary">↑</button>
+
+    <!-- Footer -->
+    <footer class="footer text-light py-4">
+      <div class="container text-center">
+        <div class="footer-links mb-3">
+          <a href="#home" class="footer-link">Home</a> | 
+          <a href="#about" class="footer-link">About</a> | 
+          <a href="#projects" class="footer-link">Projects</a> | 
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+        <div class="social-icons">
+          <a href="https://www.instagram.com" target="_blank" class="me-3"><i class="fab fa-instagram fa-2x "></i></a>
+          <a href="https://www.twitter.com" target="_blank" class="me-3"><i class="fab fa-twitter fa-2x "></i></a>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+        </div>
+        <p class="mt-3 mb-0">© 2024 Kiruthika V. All Rights Reserved.</p>
+      </div>
+    </footer>
+  
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
