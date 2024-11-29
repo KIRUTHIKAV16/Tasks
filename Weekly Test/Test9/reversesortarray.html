@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse and Sort Array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 15px;
+            padding: 15px;
+            background-color: antiquewhite;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #567ea8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #7d8084;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reverse and Sort Array</h1>
+        <input id="inputArray" type="text" placeholder="Enter characters">
+        <button onclick="processArraychar()">Reverse and Sort</button>
+        <div id="output" class="output"></div>
+    </div>
+
+    <script>
+        function reverseAndSortArray(array) {
+            
+            const reversedArray = array.reverse();
+            
+            return reversedArray.sort();
+        }
+
+        function processArraychar() {
+            const input = document.getElementById('inputArray').value;
+            if (!input) {
+                document.getElementById('output').innerText = 'Please enter some characters.';
+                return;
+            }
+
+            const charArray = input.split(',').map(item => item.trim());
+
+            const result = reverseAndSortArray(charArray);
+
+            document.getElementById('output').innerText = `Result: [${result.join(', ')}]`;
+        }
+    </script>
+</body>
+</html>
