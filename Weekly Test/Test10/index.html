@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        #products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product {
+            border: 1px solid #dfc9c9;
+            padding: 10px;
+            border-radius: 5px;
+            width: 150px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .btn{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Display Products using fetch api</h1>
+    <button onclick="f1()" class="btn">Display Products</button>
+    <div id="products"></div>
+
+    <script>
+        async function f1() {
+            const url = 'https://dummyjson.com/products';
+            const productsContainer = document.getElementById('products');
+            productsContainer.innerHTML = '<p>Display the products here....</p>';
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const products = data.products;
+
+                productsContainer.innerHTML = '';
+
+                products.forEach(product => {
+                    const productsDiv = document.createElement('div');
+                    productsDiv.className = 'product';
+                    productsDiv.innerHTML = `
+                        <img src="${product.thumbnail}" alt="${product.title}">
+                        <h3>${product.title}</h3>
+                        <p>${product.description}</p>
+                        <p><strong>Price:</strong> $${product.price}</p>
+                    `;
+                    productsContainer.appendChild(productsDiv);
+                });
+            } catch (error) {
+                productsContainer.innerHTML = `<p>Error: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
