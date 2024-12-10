@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Example</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function App() {
+            const Clickbtn = () => {
+                const content = React.createElement(
+                    'div',
+                    {},
+                    React.createElement('h1', {}, 'Welcome to React.'),
+                    React.createElement('p', {}, 'This is a simple example of a functional component rendering a heading and a paragraph.')
+                );
+                ReactDOM.render(content, document.getElementById('content'));
+            };
+
+            return (
+                <div>
+                    <button onClick={Clickbtn}>Rendering heading and paragraph</button>
+                    <div id="content"></div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
