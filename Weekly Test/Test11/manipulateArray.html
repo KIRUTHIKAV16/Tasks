@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulate Array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #8e8484;
+            margin: 30px;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #060606;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #e3c5c5;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+        button {
+            background-color: #480746;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #92a5b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Manipulate Array</h1>
+        <button onclick="manipulateArray()">Click</button>
+        <div class="output" id="output">Output will be show here... </div>
+    </div>
+
+    <script>
+        function manipulateArray() {
+
+            let array = ["suzuki", "honda", "ford" , "holden"];
+
+            array.push("volvo");
+
+            let uppercaseArray = array.map(element => element.toUpperCase());
+
+            const output = document.getElementById('output');
+            output.innerHTML = `Updated Array: ${uppercaseArray.join(', ')}`;
+        }
+    </script>
+</body>
+</html>
