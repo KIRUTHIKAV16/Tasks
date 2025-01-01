@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White board Front Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="slider">
+        <div class="slide" id="slide1">
+            <div class="header">
+                <span class="name"> BlanqCanvas </span>
+                <i class="fas fa-user login-icon" onclick="openLoginPopup()"></i>
+            </div>
+            <div class="welcome-message">
+                <h1>Welcome to the Whiteboard</h1>
+                <p>Unlock your creativity with the dynamic features of our Digital Whiteboard.
+                    <br> Seamless, intuitive, and built for limitless possibilities.</p>
+                <p>Click below to start using the whiteboard:</p>
+                <button><a href="whiteboard.html" class="start-button">Go to Whiteboard</a></button>  
+            </div>
+            <div class="navigation">
+                <button class="prev" onclick="goToSlide(3)">&#8592; </button>
+                <button class="next" onclick="goToSlide(2)">&#8594; </button>
+            </div>
+        </div>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="closeLoginPopup()"></div>
+    <!-- Login Popup -->
+    <div class="login-popup" id="loginPopup">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Enter Username" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <button onclick="login()">Login</button>
+        <button class="cancel-button" onclick="closeLoginPopup()">Cancel</button>
+    </div>    
+        <div class="slide" id="slide2">
+            <div class="header">
+                <span class="name"> BlanqCanvas </span>
+                <i class="fas fa-user login-icon" onclick="openLoginPopup()"></i>
+            </div>
+            <h2>About</h2>
+            <p class="definition">A feature-rich digital whiteboard with tools for drawing, erasing, shaping, and customizing colors.<br> 
+                Includes options for exporting, sticky notes, zoom, undo/redo, and gridlines for enhanced creativity. <br> 
+                The design is user-friendly, enabling seamless creation, editing, and sharing of visual ideas. <br> 
+                The layout is responsive and organized to enhance productivity and creativity.
+            </p>
+            <button onclick="goToSlide(3)">Next</button>
+            <div class="navigation">
+                <button class="prev" onclick="goToSlide(1)">&#8592; </button>
+                <button class="next" onclick="goToSlide(3)">&#8594; </button>
+            </div>
+        </div>        
+        <div class="slide" id="slide3">
+            <div class="header">
+                <span class="name"> BlanqCanvas </span>
+                <i class="fas fa-user login-icon" onclick="openLoginPopup()"></i>
+            </div>
+            <h2>Features</h2>
+            <div class="features">
+                <button class="feature-btn" onclick="showFeature(this, 'Drawing and Erasing Tools')">
+                    <div class="front">Drawing and Erasing Tools</div>
+                    <div class="back">Intuitive tools like pencil, marker, and eraser for effortless sketching and editing.
+                        </div>
+                </button>
+                <button class="feature-btn" onclick="showFeature(this, 'Shape Creation')">
+                    <div class="front">Shape Creation</div>
+                    <div class="back">Predefined shapes such as squares, circles, arrows, and stars for structured diagrams.
+                    </div>
+                </button>
+                <button class="feature-btn" onclick="showFeature(this, 'Brush Customization')">
+                    <div class="front">Brush Customization</div>
+                    <div class="back">Multiple brush styles, including watercolor, crayon, and calligraphy options.</div>
+                </button>
+                <button class="feature-btn" onclick="showFeature(this, 'Color Palette')">
+                    <div class="front">Color Palette</div>
+                    <div class="back">A color picker for selecting and applying your preferred brush or background color.</div>
+                </button>
+                <button class="feature-btn" onclick="showFeature(this, 'Sticky Notes')">
+                    <div class="front">Sticky Notes</div>
+                    <div class="back">Add and manage sticky notes for brainstorming or jotting down quick ideas.
+                    </div>
+                </button>
+                <button class="feature-btn" onclick="showFeature(this, 'Export and Save Options')">
+                    <div class="front">Export and Save Options</div>
+                    <div class="back">Export your work as a PDF or save files for future use.
+                    </div>
+                </button>
+                <button class="feature-btn" onclick="showFeature(this, 'Undo, Redo, and Clear')">
+                    <div class="front">Undo, Redo, and Clear</div>
+                    <div class="back">Simple controls to fix mistakes or clear the canvas for a fresh start.</div>
+                </button>
+                <button class="feature-btn" onclick="showFeature(this, 'Zoom and Gridlines')">
+                    <div class="front">Zoom and Gridlines</div>
+                    <div class="back">Zoom in/out and toggle gridlines for precise alignment and focus.</div>
+                </button>
+                <button class="feature-btn" onclick="showFeature(this, 'Fullscreen Mode')">
+                    <div class="front">Fullscreen Mode</div>
+                    <div class="back">Switch to fullscreen for an immersive whiteboard experience.
+                    </div>
+                </button>
+            </div>
+            <div class="navigation">
+                <button class="prev" onclick="goToSlide(2)">&#8592; </button>
+                <button class="next" onclick="goToSlide(1)">&#8594; </button>
+            </div>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

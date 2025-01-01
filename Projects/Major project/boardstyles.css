@@ -1,0 +1,519 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #e9eeee;
+  font-family: Arial, sans-serif;
+}
+/* Top Row */
+#topRow {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #e5bcbc;
+  margin-left: 70px;
+  flex-direction: row;
+}
+/* Main Container */
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: #f6e2e2;
+  border-radius: 8px;
+  padding: 15px;
+  color: rgb(242, 86, 86);
+  position: relative;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.container:hover {
+  background-color: #aca9a9;
+  transform: translateY(-5px); 
+}
+.container span {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(43, 2, 2);
+  font-size: 12px;
+  padding: 0 5px; 
+  transition: color 0.3s ease;
+}
+/* Icon Button */
+.iconBtn {
+  background-color: #4f4040;
+  border: none;
+  color: white;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.iconBtn:hover {
+  background-color: #777;
+  border-radius: 5px;
+  transform: scale(1.1);
+}
+.iconBtn::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  max-width: 120px;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s;
+  z-index: 10;
+}
+.iconBtn:hover::after {
+  visibility: visible;
+  opacity: 1; 
+}
+/* Tool containers */
+#toolsContainer, #shapesContainer, #colorsContainer, #stickyNotesContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+}
+#toolsContainer .iconBtn,
+#shapesContainer .iconBtn,
+#colorsContainer .iconBtn,
+#stickyNotesContainer .iconBtn {
+  width: 45px;
+  height: 45px;
+}
+#backgroundColorContainer,
+#importContainer {
+  display: flex;
+  align-items: center;
+}
+#backgroundColorBtn {
+  font-size: 20px;
+  padding: 5px;
+}
+#importPdfBtn {
+  font-size: 20px;
+  padding: 5px;
+}
+/* Whiteboard Section */
+#content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin-left: 80px;
+}
+#whiteboard-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 90%;
+}
+#whiteboard {
+  width: 100%;
+  height: 500px;
+  background-color: #fff;
+  cursor: crosshair;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+/* Go Home Button */
+#goHomeBtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #978f8f;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 25px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+#goHomeBtn:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+#toolsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+#shapesContainer {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+/* Toolbar */
+#toolbar {
+  width: 70px;
+  background-color: #dbbcbc;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  gap: 1px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+}
+/* Tool Container */
+.tool-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.tool {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #341d1d;
+  border: none;
+  border-radius: 30%;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  margin: 5px;
+  position: relative;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.tool:hover {
+  background-color: #777;
+  transform: scale(1.05);
+}
+.tool.active {
+  background-color: #6e6b6b;
+}
+/* Tool name shown on hover */
+.tool:hover::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  max-width: 120px;
+  text-align: center;
+  z-index: 20;
+}
+/* Zoom Buttons */
+.zoom-btn {
+  background-color: #341d1d;
+  border-radius: 5px;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.zoom-btn:hover {
+  background-color: #777;
+  transform: scale(1.05);
+}
+/* Exit Button */
+.exit-btn {
+  background-color: red;
+  color: white;
+  font-size: 18px;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+.exit-btn:hover {
+  background-color: darkred;
+  transform: scale(1.05);
+}
+
+/* Brush Options */
+#brushOptions {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 100;
+}
+#brushesContainer {
+  position: relative;
+}
+#brushesContainer:hover #brushOptions {
+  display: block;
+  transform: scale(1.05);
+}
+#brushOptions button {
+  margin: 5px;
+}
+#brushOptions button:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+/* Sticky Notes */
+.sticky-note {
+  position: absolute;
+  background-color: #ffeb3b;
+  padding: 10px;
+  border-radius: 8px;
+  width: 150px;
+  height: 150px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: move;
+}
+.sticky-note .note-text {
+  min-height: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: Arial, sans-serif;
+}
+.sticky-note .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.sticky-note .resize-handle {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 15px;
+  height: 15px;
+  background: #000;
+  cursor: se-resize;
+}
+.sticky-note.locked {
+  pointer-events: none;
+}
+.sticky-note.dragging {
+  opacity: 0.5;
+}
+#thumbnailPreview {
+  max-width: 250px;
+  max-height: 250px;
+
+}
+/* Responsive Design */
+@media (max-width: 1000px) {
+  #topRow {
+    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  #toolsContainer, #shapesContainer {
+    flex-direction: column;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+  #toolbar {
+    width: 60px;
+  }
+  .iconBtn {
+    width: 35px;
+    height: 35px;
+  }
+  .tool {
+    width: 35px;
+    height: 35px;
+  }
+  #whiteboard {
+    height: 400px;
+  }
+  #brushOptions {
+    grid-template-columns: repeat(1, 1fr); 
+    padding: 4px; 
+    font-size: 10px; 
+    position: relative; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+  }
+  #goHomeBtn {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Containers */
+  #toolsContainer, #shapesContainer {
+    flex-direction: column;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    
+  }
+  #content {
+    flex-direction: column;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #whiteboard-wrapper {
+    width: 100%;
+    height: 70%;
+  }
+  #whiteboard {
+    height: 300px;
+  }
+  /* Icon Button */
+  .iconBtn {
+    background-color: #4f4040;
+    border: none;
+    color: white;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  /* Tool Button */
+  .tool {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #341d1d;
+    border: none;
+    border-radius: 30%;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    margin: 5px;
+    position: relative;
+    transition: transform 0.3s ease, cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  #brushOptions {
+    position: relative; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    transform: none; 
+    padding: 5px; 
+    font-size: 14px; 
+  }
+  #goHomeBtn {
+    font-size: 15px;
+  }
+}
+/* Animation effect */
+@keyframes hoverEffect {
+  0% {
+    background-color: #f6e2e2;
+  }
+  100% {
+    background-color: #aca9a9;
+  }
+}
+.container:hover {
+  animation: hoverEffect 0.3s forwards;
+}
+@keyframes iconHoverEffect {
+  0% {
+    transform: scale(1);
+    background-color: #4f4040;
+  }
+  50% {
+    transform: scale(1.2);
+    background-color: #3d3232;
+  }
+  100% {
+    transform: scale(1);
+    background-color: #4f4040;
+  }
+}
+.iconBtn:hover, .tool:hover, #goHomeBtn:hover {
+  animation: iconHoverEffect 0.4s ease-in-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#toolbar , #topRow .iconBtn{
+  animation: fadeIn 0.5s ease-out;
+}
+@keyframes whiteboardAnimation {
+  0% {
+    background-color: #f9f9f9;
+    border-color: #e0e0e0;
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    background-color: #fff;
+    border-color: #ccc;
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    background-color: #fff;
+    border-color: #ccc;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+#whiteboard {
+  animation: whiteboardAnimation 1.5s ease-in-out;
+}

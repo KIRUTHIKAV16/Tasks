@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="boardstyles.css">
+  <title>Digital WhiteBoard</title>
+</head>
+<body>
+  <!-- Top Row for containers -->
+  <div id="topRow">
+    <div class="container" id="toolsContainer">
+      <button class="iconBtn" id="pencilBtn" title="Pencil">✏️</button>
+      <button class="iconBtn" id="eraserBtn" title="Eraser">🧽</button>
+      <button class="iconBtn" id="textBtn" title="Text">🔠</button>
+      <button class="iconBtn" id="markerBtn" title="Marker">🖍️</button>
+      <span>Tools</span>
+    </div>
+    <div class="container" id="backgroundColorContainer">
+      <button class="iconBtn" id="backgroundColorBtn" title="Background Color">🎨</button>
+      <span>Background</span>
+    </div>
+    <div class="container" id="brushesContainer">
+      <button class="iconBtn" id="brushBtn" title="Brush">🖌️</button>
+      <div id="brushOptions" class="brush-options">
+        <button class="iconBtn" id="crayonBtn" title="Crayon">🖍️</button>
+        <button class="iconBtn" id="airbrushBtn" title="Air Brush">💨</button>
+        <button class="iconBtn" id="watercolorBtn" title="Watercolor">🎨</button>
+        <button class="iconBtn" id="oilBrushBtn" title="Oil Brush">🖌️</button>
+        <button class="iconBtn" id="calligraphyBtn" title="Calligraphy Brush">✍️</button>
+      </div>
+      <span>Brushes</span>
+    </div>
+    <div class="container" id="shapesContainer">
+      <button class="iconBtn" id="squareBtn" title="Square">🔲</button>
+      <button class="iconBtn" id="circleBtn" title="Circle">🔵</button>
+      <button class="iconBtn" id="triangleBtn" title="Triangle">🔺</button>
+      <button class="iconBtn" id="ellipseBtn" title="Ellipse">⏺️</button>
+      <button class="iconBtn" id="hexagonBtn" title="Hexagon">🔷</button>
+      <button class="iconBtn" id="starBtn" title="Star">⭐</button>
+      <button class="iconBtn" id="pentagonBtn" title="Pentagon">🔶</button>
+      <button class="iconBtn" id="rhombusBtn" title="Rhombus">🔸</button>
+      <button class="iconBtn" id="parallelogramBtn" title="Parallelogram">🔻</button>
+      <button class="iconBtn" id="octagonBtn" title="Octagon">🛑</button>
+      <button class="iconBtn" id="crossBtn" title="Cross">❌</button>
+      <button class="iconBtn" id="heartBtn" title="Heart">❤️</button>
+      <button class="iconBtn" id="lineBtn" title="Line">➖</button>
+      <button class="iconBtn" id="arrowBtn" title="Arrow">➡️</button>
+      <span>Shapes</span>
+    </div>
+    <div class="container" id="colorsContainer">
+      <input class="tool" type="color" id="color-picker" title="Pick a color" onchange="changeBrushColor(this.value)">
+      <span>Colors</span>
+    </div>
+    <div class="container" id="exportContainer">
+      <button class="iconBtn" id="exportPdfBtn" title="Export PDF">📄</button>
+      <span>Export</span>
+    </div>
+    <div id="stickyNotesContainer" class="container">
+      <button class="iconBtn" id="addStickyNoteBtn" title="Add Sticky Note">🗒️</button>
+      <span>Sticky Notes</span>
+    </div>
+  </div>
+  <!-- Left Sidebar for tools -->
+  <div id="toolbar">
+    <div class="tool-container">
+      <button class="tool" data-name="New" id="newBtn">📝</button>
+    </div>
+    <div class="tool-container">
+      <button class="tool" data-name="Import" id="importBtn">📂</button>
+    </div>
+    <div class="tool-container">
+      <button class="tool" data-name="Save As" id="saveBtn">💾</button>
+    </div>
+    <div class="tool-container">
+      <button class="tool" data-name="Print" id="printBtn">🖨️</button>
+    </div>
+    <div class="tool-container">
+      <button class="tool" data-name="Share" id="shareBtn">📤</button>
+    </div>
+    <div class="tool-container">
+      <button class="tool zoom-btn" data-name="Zoom In" id="zoomInBtn">+</button>
+    </div>
+    <div class="tool-container">
+      <button class="tool zoom-btn" data-name="Zoom Out" id="zoomOutBtn">−</button>
+    </div>
+    <div class="tool-container">
+      <button class="tool" data-name="Gridlines" id="gridBtn">📐</button>
+    </div>
+    <div class="tool-container">
+      <button class="tool" data-name="Full Screen" id="fullscreenBtn">🖥️</button>
+    </div>
+    <div class="tool-container">
+      <button class="tool" data-name="Undo" id="undoBtn">↩️</button>
+    </div>
+    <div class="tool-container">
+      <button class="tool" data-name="Redo" id="redoBtn">↪️</button>
+    </div>
+    <div class="tool-container">
+      <button class="tool" data-name="Clear" id="clearBtn">🧹</button>
+    </div>
+    <div class="tool-container">
+      <button class="tool exit-btn" data-name="Exit" id="exitBtn">✖️</button>
+    </div>
+  </div>
+  <!-- Go to Home Button -->
+  <a href="index.html" id="goHomeBtn" title="Go to Home">🏠</a>
+  <!-- Main Content Area -->
+  <div id="content">
+    <!-- Whiteboard -->
+    <div id="whiteboard-wrapper">
+      <canvas id="whiteboard"></canvas>
+    </div>
+    <!-- Thumbnail -->
+    <div>
+      <img id="thumbnailPreview" alt="Thumbnail Preview" style="display: none; margin: 10px; border: 1px solid #ccc;" />
+    </div>
+  </div>
+  <script src="boardscript.js"></script>
+</body>
+</html>
