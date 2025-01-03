@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odd or Even Checker</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        text-align: center;
+        background: #ffffff;
+        padding: 20px 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    input {
+        padding: 10px;
+        width: 80%;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px; 
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #result {
+        margin-top: 15px;
+        font-size: 1.2em;
+        color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Odd or Even Number Checker</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="checkOddEven()">Check</button>
+    <p id="result"></p>
+  </div>
+  <script>
+    function checkOddEven() {
+    const number = document.getElementById('numberInput').value;
+    const result = document.getElementById('result');
+  
+    if (number === "") {
+         result.textContent = "Please enter a number!";
+         result.style.color = "red";
+         return;
+    }
+  
+    if (number % 2 === 0) {
+         result.textContent = `${number} is an Even number.`;
+         result.style.color = "green";
+    } else {
+         result.textContent = `${number} is an Odd number.`;
+         result.style.color = "blue";
+    }
+  }
+
+  </script>
+</body>
+</html>
