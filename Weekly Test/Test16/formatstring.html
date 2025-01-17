@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Format String</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        color: black;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #987373;
+        border-radius: 10px;
+    }
+    .block{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1 {
+        text-align: center;
+        color: #063108;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0;
+        font-weight: bold;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+    }
+
+    button {
+        display: block;
+        width: 300px;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #5530d8;
+    }
+
+    .output {
+        margin-top: 20px;
+    }
+
+    .output p {
+        margin: 5px 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="block">
+        <h1>Format String</h1>
+        <label for="inputString">Enter a string:</label>
+        <input type="text" id="inputString" placeholder="Type String here">
+        <button onclick="formatString()">Format String</button>
+
+        <div class="output">
+            <p><strong>Uppercase:</strong> <span id="uppercaseResult"></span></p>
+            <p><strong>Lowercase:</strong> <span id="lowercaseResult"></span></p>
+            <p><strong>Substring {index 2 to 5}:</strong> <span id="substringResult"></span></p>
+        </div>
+    </div>
+  </div>
+  
+  <script>
+    function formatString() {
+        const input = document.getElementById("inputString").value;
+        
+        const uppercase = input.toUpperCase();
+        const lowercase = input.toLowerCase();
+        const substring = input.slice(2, 6);
+        document.getElementById("uppercaseResult").textContent = uppercase;
+        document.getElementById("lowercaseResult").textContent = lowercase;
+        document.getElementById("substringResult").textContent = substring;
+    }
+
+  </script>
+</body>
+</html>
