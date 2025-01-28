@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Theme Toggle using Context API</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .light {
+      background-color: white;
+      color: #000000;
+    }
+    .dark {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    .container {
+      padding: 20px;
+      height:700px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    const ThemeContext = React.createContext();
+
+    function ThemeProvider({ children }) {
+      const [theme, setTheme] = React.useState('light');
+
+      const toggleTheme = () => {
+        setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+      };
+
+      return (
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+          {children}
+        </ThemeContext.Provider>
+      );
+    }
+
+    function ThemeDisplay() {
+      const { theme } = React.useContext(ThemeContext);
+
+      return <h1>The current theme is {theme}</h1>;
+    }
+
+    function ThemeControls() {
+      const { toggleTheme } = React.useContext(ThemeContext);
+
+      return <button onClick={toggleTheme}>Toggle Theme</button>;
+    }
+
+    function App() {
+      const { theme } = React.useContext(ThemeContext);
+
+      return (
+        <div className={`container ${theme}`}>
+          <h1>Theme Toggle App</h1>
+          <ThemeDisplay />
+          <ThemeControls />
+        </div>
+      );
+    }
+
+    ReactDOM.render(<ThemeProvider> <App /> </ThemeProvider>,document.getElementById('root'));
+  </script>
+
+</body>
+</html>
